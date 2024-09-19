@@ -1,4 +1,4 @@
-if(window.location.href == "https://SolvPath.co/" || window.location.href == "https://SolvPath.co/index.php" || window.location.href == "https://SolvPath.co/index"){
+if(window.location.href == "https://SolvPath.co/" || window.location.href == "https://SolvPath.co/index.html" || window.location.href == "https://SolvPath.co/index"){
 
     $('.navbar-nav li a').removeClass('active');
     $('#home-link').addClass('active')

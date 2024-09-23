@@ -183,82 +183,82 @@
                             <li><a href="https://linkedin.com/company/SolvPath/" target="_blank"><i class="ri-linkedin-fill"></i></a></li>
                             <li><a href="https://instagram.com/SolvPath?igshid=YmMyMTA2M2Y=" target="_blank"><i class="ri-instagram-fill"></i></a></li>
                         </ul>
-                        <div class="contact-form">
+                         <div class="contact-form">
                             <h3>Ready to Get Started?</h3>
 
-                            <form id="contactFormTwo" action="https://formspree.io/f/meojbolk" method="POST" onsubmit="submitForm(); return false;">
-    <div class="row">
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <input type="text" name="name" class="form-control" id="contact-name" required data-error="Please enter your name" placeholder="Your name">
-                <div class="help-block with-errors"></div>
-            </div>
-        </div>
+                            <form id="contactForm" action="https://formspree.io/f/mdknrlbr" method="POST" onsubmit="submitForm(); return false;">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" required data-error="Please enter your name" placeholder="Your name" id="contact-name-menu">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <input type="email" name="email" class="form-control" id="contact-email" required data-error="Please enter your email" placeholder="Your email address">
-                <div class="help-block with-errors"></div>
-            </div>
-        </div>
+                                    <div class="col-lg-12 col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control" required data-error="Please enter your email" placeholder="Your email address" id="contact-email-menu">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <input type="text" name="subject" class="form-control" id="contact-subject" required data-error="Please enter your subject" placeholder="Your Subject">
-                <div class="help-block with-errors"></div>
-            </div>
-        </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" name="phone_number" class="form-control" required data-error="Please enter your phone number" placeholder="Your phone number" id="contact-phone-menu">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" name="subject-menu" class="form-control" required data-error="Please enter email subjecct" placeholder="Email Subject" id="contact-subject-menu">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-        <div class="col-lg-6 col-md-6">
-            <div class="form-group">
-                <input type="number" name="phone" class="form-control" id="contact-phone" required data-error="Please enter your phone" placeholder="Your Phone">
-                <div class="help-block with-errors"></div>
-            </div>
-        </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="Write your message..." id="contact-message-menu"></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
 
-        <div class="col-lg-12 col-md-12">
-            <div class="form-group">
-                <textarea name="message" class="form-control" cols="30" rows="6" id="contact-message" required data-error="Please enter your message" placeholder="Your message..."></textarea>
-                <div class="help-block with-errors"></div>
-            </div>
-        </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <button type="submit" class="default-btn">Send Message<span></span></button>
+                                        <div id="msgSubmitTwo" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </form>
 
-        <div class="col-lg-12 col-md-12">
-            <button type="submit" class="default-btn">Send Message<span></span></button>
-            <div id="msgSubmitTwo" class="h3 text-center hidden"></div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-</form>
+                            <script>
+                                function submitForm() {
+                                    const form = document.getElementById('contactForm');
+                                    const formData = new FormData(form);
 
-<script>
-    function submitForm() {
-        const form = document.getElementById('contactFormTwo');
-        const formData = new FormData(form);
+                                    fetch(form.action, {
+                                        method: 'POST',
+                                        body: formData,
+                                        headers: {
+                                            'Accept': 'application/json'
+                                        }
+                                    }).then(response => {
+                                        if (response.ok) {
+                                            // Optionally show a success message
+                                            document.getElementById('msgSubmitTwo').innerText = "Your message has been sent!";
+                                            setTimeout(function() {
+                                                location.reload();  // Reload the page after a short delay
+                                            }, 1000);
+                                        } else {
+                                            document.getElementById('msgSubmitTwo').innerText = "Something went wrong. Please try again.";
+                                        }
+                                    }).catch(error => {
+                                        document.getElementById('msgSubmitTwo').innerText = "There was an error. Please try again later.";
+                                    });
 
-        fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
-            if (response.ok) {
-                // Optionally show a success message
-                document.getElementById('msgSubmitTwo').innerText = "Your message has been sent!";
-                setTimeout(function() {
-                    location.reload();  // Reload the page after a short delay
-                }, 1000);
-            } else {
-                document.getElementById('msgSubmitTwo').innerText = "Something went wrong. Please try again.";
-            }
-        }).catch(error => {
-            document.getElementById('msgSubmitTwo').innerText = "There was an error. Please try again later.";
-        });
-
-        return false;  // Prevent the default form submission
-    }
-</script>
+                                    return false;  // Prevent the default form submission
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -790,7 +790,7 @@
                             <h3>You Have A Question? Ask Us! <span class="overlay"></span></h3>
                             <!-- <p>Lorem ipsum dolor sit amet consetetur sadipscing elitre sed diam non umy eirmod tempor invidunt ut labore.</p> -->
 
-                            <form id="contactFormTwo" action="https://formspree.io/f/meojbolk" method="POST" onsubmit="submitForm(); return false;">
+                            <form id="contactFormTwo" action="https://formspree.io/f/mdknrlbr" method="POST" onsubmit="submitForm(); return false;">
     <div class="row">
         <div class="col-lg-6 col-md-6">
             <div class="form-group">
